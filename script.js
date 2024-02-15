@@ -128,24 +128,24 @@ function draw() {
 
     context2d.fillStyle = "black";
     context2d.strokeStyle = "black";
-    
+
+    score = 0;
     for(let i = 0; i < snack_pellets.length; i++)  {
         let pellet = snack_pellets[i];
 
-        if(hypotenus(x_pacman-pellet.x, y_pacman-pellet.y) < (radius/2)){
+
+        if( hypotenus((x_pacman - pellet.x), (y_pacman - pellet.y)) < (radius/2) ) {
             snack_pellets.splice(i, 1);
             score += 10;
         }
-_   }
+   }
 
     document.getElementById("score").innerText = score;
     
     
     for(let pellet of snack_pellets) {
-        context2d.translate(pellet.x, pellet.y)
         context2d.fill(pellet.circle);
         context2d.stroke(pellet.circle);
-        context2d.translate(-1*pellet.x, -1*pellet.y);
     }
 }
 
