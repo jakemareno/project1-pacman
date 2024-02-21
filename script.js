@@ -144,14 +144,14 @@ function draw() {
 
   if(x_pacman <= radius) {
     x_pacman = radius;
-  } else if(x_pacman >= (300 - radius)) {
-    x_pacman = 300 - radius;
+  } else if(x_pacman >= (canvas.width - radius)) {
+    x_pacman = canvas.width - radius;
   }
 
   if(y_pacman <= radius) {
     y_pacman = radius;
-  } else if(y_pacman >= (150 - radius)) {
-    y_pacman = 150 - radius;
+  } else if(y_pacman >= (canvas.height - radius)) {
+    y_pacman = canvas.height - radius;
   }
 
   context2d.translate(x_pacman, y_pacman);
